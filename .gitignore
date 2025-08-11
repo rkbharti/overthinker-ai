@@ -1,0 +1,21 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Spyder
+.spyproject/
+
+# macOS
+.DS_Store
