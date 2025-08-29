@@ -18,7 +18,7 @@ Here's what the Overthinker AI demo looks like when running:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/overthinker-ai.git
+git clone https://github.com/rkbharti/overthinker-ai
 cd overthinker-ai
 
 2. Create a virtual environment:
