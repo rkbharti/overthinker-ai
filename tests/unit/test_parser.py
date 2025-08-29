@@ -24,8 +24,16 @@ class TestEntityRecognition:
         """Verify entity recognition works"""
         result = parser.parse("Apple is looking at buying U.K. startup for $1 billion")
         assert len(result['entities']) > 0, "No entities detected"
-        assert ('U.K.', 'GPE') in result['entities'], "GPE entity not found"
-        assert any(ent[1] == 'MONEY' for ent in result['entities']), "Money entity missing"
+        
+        # Check if any entity has text 'U.K.' and label 'GPE'
+        uk_entity = next((entity for entity in result['entities'] 
+                         if entity['text'] == 'U.K.' and entity['label'] == 'GPE'), None)
+        assert uk_entity is not None, "GPE entity not found"
+        
+        # Check for MONEY entity
+        money_entity = next((entity for entity in result['entities'] 
+                            if entity['label'] == 'MONEY'), None)
+        assert money_entity is not None, "Money entity missing"
 
 class TestSentimentAnalysis:
     def test_positive_sentiment(self, parser):
