@@ -2,6 +2,10 @@
 
 A thoughtful AI assistant that helps with decision-making by providing multiple perspectives on everyday questions.
 
+Here's what the Overthinker AI demo looks like when running:
+
+![Terminal Screenshot](images/terminal-screenshot.png)
+
 ## Features
 
 - Natural language processing using spaCy
