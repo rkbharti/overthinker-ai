@@ -1,41 +1,67 @@
-# 🧠 Overthinker AI - Scenario Analysis Engine
+# Overthinker AI
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+A thoughtful AI assistant that helps with decision-making by providing multiple perspectives on everyday questions.
 
-An AI system that analyzes scenarios from multiple perspectives, assessing risks, sentiment, and ethical implications.
+## Features
 
-```mermaid
-graph TD
-    A[User Input] --> B(Text Parsing)
-    B --> C[Entity Recognition]
-    B --> D[Action Extraction]
-    C --> E[Risk Assessment]
-    D --> F[Probability Modeling]
-    E --> G[Output Visualization]
-    F --> G
+- Natural language processing using spaCy
+- Entity recognition for people, organizations, locations, etc.
+- Decision analysis for transportation, purchases, and general life choices
+- Multi-perspective analysis (financial, practical, emotional, etc.)
 
-    📦 Installation
-    git clone https://github.com/yourusername/overthinker-ai.git
-    cd overthinker-ai
-    #setup variable env
-    python -m venv .venv
-    # Windows:
-    .\.venv\Scripts\activate
-    # Mac/Linux:
-    source .venv/bin/activate
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/overthinker-ai.git
+cd overthinker-ai
+
+2. Create a virtual environment:
+python -m venv .venv
+
+3. Activate the virtual environment:
+Windows: .venv\Scripts\activate
+macOS/Linux: source .venv/bin/activate
+
+4. Install dependencies:
+pip install -r requirements.txt
+
+5. Run the demo script:
+python demo.py
 
 
-    Install dependencies 
-    pip install -r requirements.txt
-    python -m spacy download en_core_web_lg
-    python -m textblob.download_corpora
+Example questions to ask:
 
-    graph LR
-    A[overthinker-ai/] --> B[core/]
-    A --> C[tests/]
-    A --> D[data/]
-    B --> E[scenario_parser.py]
-    B --> F[probability_engine.py]
-    C --> G[unit/]
-    D --> H[knowledge_graphs/]
+"Should I buy a new phone or repair my old one?"
+
+"What's the best way to get to work today?"
+
+"I'm not sure whether to cook at home or order food."
+
+
+overthinker-ai/
+├── overthinker/
+│   ├── core/
+│   │   ├── scenario_parser.py    # NLP parsing with spaCy
+│   │   ├── decision_analyzer.py  # Decision analysis logic
+│   │   └── __init__.py          # Package initialization
+│   └── __init__.py
+├── tests/
+│   └── unit/
+│       └── test_parser.py       # Unit tests
+├── demo.py                      # Demo script
+└── README.md                    # This file
+
+Technologies Used
+--Python 3.x
+--spaCy for NLP
+--pytest for testing
+
+
+Future Enhancements
+-- Web interface
+--More decision categories
+--Memory of previous decisions
+--Integration with external APIs for real-time data
+```
