@@ -3,3 +3,6 @@ weasel==0.3.4
 click==8.0.4
 textblob>=0.17.1
 pytest>=7.0.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
