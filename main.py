@@ -1,13 +1,16 @@
 """
 FastAPI Web Interface for Overthinker AI
-Deployment-ready REST API
+Deployment-ready REST API with web UI
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from typing import Optional
 from overthinker.core.decision_analyzer import DecisionAnalyzer
 import time
+import os
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -24,6 +27,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount static files directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Initialize analyzer (singleton)
 analyzer = DecisionAnalyzer()
@@ -48,14 +54,10 @@ class HealthResponse(BaseModel):
     message: str
 
 
-@app.get("/", response_model=HealthResponse)
+@app.get("/")
 async def root():
-    """Root endpoint with basic info"""
-    return HealthResponse(
-        status="online",
-        version="2.0.0",
-        message="Overthinker AI is running! Use POST /analyze to make decisions."
-    )
+    """Serve the main HTML page"""
+    return FileResponse('static/index.html')
 
 
 @app.get("/health", response_model=HealthResponse)
