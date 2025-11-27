@@ -33,7 +33,7 @@ jobs:
           pip install click==8.0.4
            # Install specific versions to avoid compatibility issues
           pip install click==8.0.4 textblob>=0.17.1
-          python -m spacy download en_core_web_lg
+          python -m spacy download en_core_web_sm
 
       - name: Lint with flake8
         run: |
