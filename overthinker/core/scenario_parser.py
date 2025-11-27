@@ -6,7 +6,7 @@ from textblob import TextBlob
 class ScenarioParser:
     def __init__(self):
         """Initialize with English language model"""
-        self.nlp = spacy.load("en_core_web_lg")
+        self.nlp = spacy.load("en_core_web_sm")
         
         # === ENHANCEMENT 1: Cache for repeated texts ===
         self._cache = {}  # Dictionary to store parsed results for faster repeated access
